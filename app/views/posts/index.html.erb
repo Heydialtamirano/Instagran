@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2 class="text-center">Posts</h2>
+  <hr>
+
+  <div class="row">
+    <% @post.each do |x| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <%= image_tag x.image.url(:medium), class: 'card-img-top' %>
+
+          <div class="card-body">
+            <h4 class="card-text"><%= x.description %></h4>
+            <div class="d-flex justify-content-between">
+              <%= link_to "Edit", edit_post_path(x), class: 'btn btn-primary' %>
+              <%= link_to "Details", x, class: 'btn btn-info' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
